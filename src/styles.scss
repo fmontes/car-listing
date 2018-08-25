@@ -1,1 +1,20 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css?family=Ubuntu');
+
+:root {
+    --color-main: #D8D8D8;
+    --color-sec: #9B9B9B;
+    --color-text: #343434;
+    --spacing-1: 10px;
+    --spacing-2: 20px;
+    --spacing-3: 30px;
+}
+
+html, body {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 16px;
+}
