@@ -20,7 +20,7 @@ class HostComponent implements OnInit {
     }
 }
 
-fdescribe('ImageComponent', () => {
+describe('ImageComponent', () => {
     let hostFixture: ComponentFixture<HostComponent>;
     let hostDe: DebugElement;
 
