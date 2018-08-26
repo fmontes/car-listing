@@ -27,12 +27,11 @@ describe('AppComponent', () => {
 
     it('should have car-header', () => {
         const header: DebugElement = de.query(By.css('car-header'));
-        expect(header).toBeDefined();
+        expect(header).toBeTruthy();
     });
 
     it('should have router-outlet', () => {
         const routerOutlet: DebugElement = de.query(By.css('router-outlet'));
-        expect(routerOutlet).toBeDefined();
+        expect(routerOutlet).toBeTruthy();
     });
-
 });

@@ -23,7 +23,7 @@ describe('HeaderComponent', () => {
     });
 
     it('should have header tag', () => {
-        expect(de.query(By.css('header'))).toBeDefined();
+        expect(de.query(By.css('header'))).toBeTruthy();
     });
 
     it('should have title', () => {
