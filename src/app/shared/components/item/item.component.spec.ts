@@ -2,6 +2,8 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { DebugElement, Component } from '@angular/core';
 import { By } from '@angular/platform-browser';
+import { RouterTestingModule } from '@angular/router/testing';
+
 import { ItemComponent } from './item.component';
 import { Car } from '@models/api.model';
 import { carItemMock, carImageMock, carPriceMock } from '@testing/mocks';
@@ -29,7 +31,8 @@ describe('ItemComponent', () => {
 
     beforeEach(async(() => {
         TestBed.configureTestingModule({
-            declarations: [ItemComponent, HostComponent, ImageComponent, PriceComponent]
+            declarations: [ItemComponent, HostComponent, ImageComponent, PriceComponent],
+            imports: [RouterTestingModule]
         }).compileComponents();
     }));
 

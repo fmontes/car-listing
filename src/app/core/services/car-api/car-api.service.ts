@@ -18,4 +18,15 @@ export class CarApiService {
     getCars(): Observable<Car[]> {
         return of(data);
     }
+
+    /**
+     * Get a car by id
+     *
+     * @param {string} id
+     * @returns {Observable<Car>}
+     * @memberof CarApiService
+     */
+    getCarById(id: string): Observable<Car> {
+        return of(data.filter(car => car.id === id)[0]);
+    }
 }

@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Ubuntu:400,700');
 
 :root {
+    --car-img-height: 40vh;
     --color-main: #00A0E7;
     --color-sec: #9B9B9B;
     --color-text: #003045;
@@ -21,4 +22,6 @@ html, body {
 body {
     font-family: 'Ubuntu', sans-serif;
     font-size: 16px;
+    line-height: 1.5;
+    color: var(--color-text);
 }

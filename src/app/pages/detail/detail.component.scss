@@ -1,0 +1,15 @@
+car-image {
+    min-height: 40vh;
+}
+
+.content {
+    padding: var(--space-3);
+}
+
+.teaser {
+    border-bottom: solid 2px rgba(0, 0, 0, 0.05);
+    border-top: solid 2px rgba(0, 0, 0, 0.05);
+    color: var(--color-sec);
+    font-size: 1.25rem;
+    padding: 1rem;
+}

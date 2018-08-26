@@ -1,6 +1,6 @@
 :host {
-    min-height: 40vh;
     display: block;
+    min-height: var(--car-img-height);
     position: relative;
 }
 

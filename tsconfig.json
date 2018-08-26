@@ -13,9 +13,12 @@
         "typeRoots": ["node_modules/@types"],
         "lib": ["es2017", "dom"],
         "paths": {
-            "@pages/*": ["src/app/pages/*"],
-            "@services/*": ["src/app/core/services/*"],
+            "@core/*": ["src/app/core/*"],
             "@models/*": ["src/app/shared/model/*"],
+            "@pages/*": ["src/app/pages/*"],
+            "@resolvers/*": ["src/app/core/resolvers/*"],
+            "@services/*": ["src/app/core/services/*"],
+            "@shared/*": ["src/app/shared/*"],
             "@testing/*": ["src/app/testing/*"]
         }
     }

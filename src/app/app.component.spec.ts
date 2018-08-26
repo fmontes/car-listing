@@ -1,9 +1,10 @@
 import { TestBed, async, ComponentFixture } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
-import { AppComponent } from './app.component';
-import { HeaderModule } from './core/header/header.module';
 import { DebugElement } from '@angular/core';
 import { By } from '@angular/platform-browser';
+
+import { AppComponent } from './app.component';
+import { HeaderModule } from './core/header/header.module';
 
 describe('AppComponent', () => {
     let component: AppComponent;

@@ -10,8 +10,11 @@ export interface CarPrice {
 
 export interface Car {
     brand: string;
-    model: string;
-    year: number;
-    price: CarPrice;
+    description: string;
+    id: string;
     image: CarImage;
+    model: string;
+    price: CarPrice;
+    teaser: string;
+    year: number;
 }

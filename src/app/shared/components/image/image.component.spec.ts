@@ -1,8 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ImageComponent } from './image.component';
 import { DebugElement, Component, OnInit } from '@angular/core';
 import { By } from '@angular/platform-browser';
+
+import { ImageComponent } from './image.component';
 import { CarImage } from '@models/api.model';
 
 @Component({

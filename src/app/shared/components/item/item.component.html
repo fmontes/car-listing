@@ -1,9 +1,10 @@
-<div class="info">
-    <header>
-        <h3>{{title}}</h3>
-        <h5>{{data.year}}</h5>
-    </header>
-    <car-price [data]="data.price"></car-price>
-</div>
-
-<car-image [data]="data.image"></car-image>
+<a [routerLink]="[data.id]">
+    <div class="info">
+        <header>
+            <h3>{{title}}</h3>
+            <h5>{{data.year}}</h5>
+        </header>
+        <car-price [data]="data.price"></car-price>
+    </div>
+    <car-image [data]="data.image"></car-image>
+</a>

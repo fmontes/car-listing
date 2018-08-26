@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { HeaderService } from './services/header.service';
 
 @Component({
     selector: 'car-header',
@@ -6,7 +8,11 @@ import { Component, OnInit } from '@angular/core';
     styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-    constructor() {}
+    title$: Observable<string>;
 
-    ngOnInit() {}
+    constructor(private headerService: HeaderService) {}
+
+    ngOnInit() {
+        this.title$ = this.headerService.getTitle();
+    }
 }
