@@ -1,0 +1,20 @@
+.search {
+    border-radius: 22px;
+    border: solid 1px var(--color-text);
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 1rem;
+    height: 44px;
+    margin: 10px;
+    outline: 0;
+    padding: 0 var(--space-2);
+    width: calc(100% - 20px);
+}
+
+.no-results {
+    margin: 2rem 0;
+    text-align: center;
+
+    h4, p {
+        margin: 0;
+    }
+}

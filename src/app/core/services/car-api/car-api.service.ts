@@ -20,6 +20,17 @@ export class CarApiService {
     }
 
     /**
+     * Get a list of card filtered by brand
+     *
+     * @param {string} brand
+     * @returns {Observable<Car[]>}
+     * @memberof CarApiService
+     */
+    getCarsByBrand(brand: string): Observable<Car[]> {
+        return of(brand ? data.filter(car => car.brand.toLocaleLowerCase() === brand.toLocaleLowerCase()) : data);
+    }
+
+    /**
      * Get a car by id
      *
      * @param {string} id
