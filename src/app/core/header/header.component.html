@@ -1,3 +1,4 @@
 <header>
+    <a href="/" *ngIf="showBack$ | async" class="btn">Back</a>
     <h1>{{title$ | async}}</h1>
 </header>

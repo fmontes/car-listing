@@ -11,4 +11,22 @@ h1 {
     font-size: 1.5rem;
     font-weight: normal;
     margin: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 60vw;
+}
+
+.btn {
+    background-color: rgba(0, 0, 0, 0.1);
+    color: #FFF;
+    font-size: 0.85rem;
+    height: 60px;
+    left: 0;
+    line-height: 60px;
+    position: absolute;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    width: 60px;
 }

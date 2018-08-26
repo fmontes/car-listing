@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
 import { HeaderService } from './services/header.service';
+import { NavigationEnd, Router } from '@angular/router';
+import { filter, switchMap } from 'rxjs/operators';
 
 @Component({
     selector: 'car-header',
@@ -9,10 +11,17 @@ import { HeaderService } from './services/header.service';
 })
 export class HeaderComponent implements OnInit {
     title$: Observable<string>;
+    showBack$: Observable<boolean>;
 
-    constructor(private headerService: HeaderService) {}
+    constructor(private headerService: HeaderService, private router: Router) {}
 
     ngOnInit() {
         this.title$ = this.headerService.getTitle();
+
+        this.showBack$ = this.router.events
+            .pipe(
+                filter((event: NavigationEnd) => event instanceof NavigationEnd),
+                switchMap((event: NavigationEnd) => of(event.url !== '/'))
+            );
     }
 }

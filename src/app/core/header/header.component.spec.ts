@@ -1,8 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
-import { HeaderComponent } from './header.component';
 import { DebugElement } from '@angular/core';
 import { By } from '@angular/platform-browser';
+import { RouterTestingModule } from '@angular/router/testing';
+
+import { HeaderComponent } from './header.component';
 
 describe('HeaderComponent', () => {
     let component: HeaderComponent;
@@ -11,7 +12,8 @@ describe('HeaderComponent', () => {
 
     beforeEach(async(() => {
         TestBed.configureTestingModule({
-            declarations: [HeaderComponent]
+            declarations: [HeaderComponent],
+            imports: [RouterTestingModule]
         }).compileComponents();
     }));
 
@@ -29,5 +31,14 @@ describe('HeaderComponent', () => {
     it('should have title', () => {
         const title: DebugElement = de.query(By.css('header h1'));
         expect(title.nativeElement.textContent).toEqual('Car Listing');
+    });
+
+    it('should not have back button', () => {
+        expect(de.query(By.css('.btn'))).toBeFalsy();
+    });
+
+    // TODO: need to mock the router events
+    xit('should not have back button', () => {
+        expect(de.query(By.css('.btn'))).toBeTruthy();
     });
 });
