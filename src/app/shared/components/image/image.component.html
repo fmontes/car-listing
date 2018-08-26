@@ -1,3 +1,1 @@
-<figure>
-    <img [src]="data.src" [alt]="data.caption" />
-</figure>
+<div [ngStyle]="{'background-image': 'url(' + data.src + ')'}" [attr.aria-label]="data.caption"></div>

@@ -12,7 +12,7 @@ export const data: Car[] = [
         },
         image: {
             caption: 'Best car ever',
-            src: 'an/url/image.jpg'
+            src: '/assets/images/brands/bmw/x6.jpg'
         }
     },
     {
@@ -25,7 +25,7 @@ export const data: Car[] = [
         },
         image: {
             caption: 'Best car ever',
-            src: 'an/url/image.jpg'
+            src: '/assets/images/brands/lexus/nx.jpg'
         }
     },
     {
@@ -38,7 +38,7 @@ export const data: Car[] = [
         },
         image: {
             caption: 'Best car ever',
-            src: 'an/url/image.jpg'
+            src: '/assets/images/brands/mercedes-benz/g-wagon.jpg'
         }
     }
 ];

@@ -45,8 +45,8 @@ describe('PriceComponent', () => {
         hostFixture.detectChanges();
         const final: DebugElement = de.query(By.css('h4'));
         const original: DebugElement = de.query(By.css('span'));
-        expect(final.nativeElement.textContent).toEqual('990');
-        expect(original.nativeElement.textContent).toEqual('1000');
+        expect(final.nativeElement.textContent).toEqual('$990.00');
+        expect(original.nativeElement.textContent).toEqual('$1,000.00');
     });
 
     it('should have ONLY final price', () => {
@@ -56,7 +56,7 @@ describe('PriceComponent', () => {
         hostFixture.detectChanges();
         const final: DebugElement = de.query(By.css('h4'));
         const original: DebugElement = de.query(By.css('span'));
-        expect(final.nativeElement.textContent).toEqual('9999');
+        expect(final.nativeElement.textContent).toEqual('$9,999.00');
         expect(original).toBeFalsy();
     });
 });

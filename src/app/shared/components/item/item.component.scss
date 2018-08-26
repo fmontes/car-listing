@@ -1,0 +1,26 @@
+:host {
+    min-height: 40vh;
+    display: block;
+    position: relative;
+}
+
+car-image {
+    position: absolute;
+}
+
+h3, h5 {
+    font-weight: normal;
+    margin: 0;
+}
+
+.info {
+    background-color: rgba(0, 0, 0, 0.6);
+    bottom: 0;
+    color: #FFF;
+    display: flex;
+    justify-content: space-between;
+    padding: var(--space-1) var(--space-2);
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+}

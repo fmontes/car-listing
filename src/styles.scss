@@ -1,12 +1,16 @@
-@import url('https://fonts.googleapis.com/css?family=Ubuntu');
+@import url('https://fonts.googleapis.com/css?family=Ubuntu:400,700');
 
 :root {
-    --color-main: #D8D8D8;
+    --color-main: #00A0E7;
     --color-sec: #9B9B9B;
-    --color-text: #343434;
-    --spacing-1: 10px;
-    --spacing-2: 20px;
-    --spacing-3: 30px;
+    --color-text: #003045;
+    --space-1: 10px;
+    --space-2: 20px;
+    --space-3: 30px;
+}
+
+*, *:before, *:after {
+    box-sizing: border-box;
 }
 
 html, body {

@@ -39,14 +39,9 @@ describe('ImageComponent', () => {
         hostFixture.detectChanges();
     });
 
-    it('should have figure', () => {
-        const figure: DebugElement = de.query(By.css('figure'));
-        expect(figure).toBeTruthy();
-    });
-
     it('should have img attr setup correctly', () => {
-        const image: DebugElement = de.query(By.css('img'));
-        expect(image.nativeElement.src).toContain('/an/url/image.jpg');
-        expect(image.nativeElement.alt).toContain('Hello World');
+        const image: DebugElement = de.query(By.css('div'));
+        expect(image.nativeElement.style.backgroundImage).toContain('url("an/url/image.jpg")');
+        expect(image.nativeElement.getAttribute('aria-label')).toContain('Hello World');
     });
 });
