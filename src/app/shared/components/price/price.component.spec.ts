@@ -3,7 +3,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { PriceComponent } from './price.component';
 import { DebugElement, Component } from '@angular/core';
 import { By } from '@angular/platform-browser';
-import { CarPrice } from '../../model/api.model';
+import { CarPrice } from '@models/api.model';
 
 @Component({
     selector: 'car-host-test',

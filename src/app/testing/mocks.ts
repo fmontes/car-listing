@@ -1,7 +1,7 @@
-import { CarImage, CarItem, CarPrice } from '../shared/model/api.model';
+import { CarImage, Car, CarPrice } from '@models/api.model';
 
 export const carImageMock: CarImage = {
-    caption: 'Best car evet',
+    caption: 'Best car ever',
     src: 'an/url/image.jpg'
 };
 
@@ -10,7 +10,7 @@ export const carPriceMock: CarPrice = {
     final: 17990
 };
 
-export const carItemMock: CarItem = {
+export const carItemMock: Car = {
     brand: 'BMW',
     model: 'X6',
     year: 2017,

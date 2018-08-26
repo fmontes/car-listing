@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { CarApiService } from '@services/car-api/car-api.service';
+import { Car } from '@models/api.model';
+import { Observable } from 'rxjs';
 
 @Component({
     selector: 'car-list',
@@ -6,7 +9,11 @@ import { Component, OnInit } from '@angular/core';
     styleUrls: ['./list.component.scss']
 })
 export class ListComponent implements OnInit {
-    constructor() {}
+    cars: Observable<Car[]>;
 
-    ngOnInit() {}
+    constructor(public carApiService: CarApiService) {}
+
+    ngOnInit() {
+        this.cars = this.carApiService.getCars();
+    }
 }

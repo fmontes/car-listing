@@ -4,11 +4,11 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderModule } from './core/header/header.module';
-import { ImageComponent } from './shared/components/image/image.component';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
-    declarations: [AppComponent, ImageComponent],
-    imports: [BrowserModule, AppRoutingModule, HeaderModule],
+    declarations: [AppComponent],
+    imports: [BrowserModule, AppRoutingModule, HeaderModule, SharedModule],
     providers: [],
     bootstrap: [AppComponent]
 })

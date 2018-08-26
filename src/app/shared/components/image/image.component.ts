@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { CarImage } from '../../model/api.model';
+import { CarImage } from '@models/api.model';
 
 @Component({
     selector: 'car-image',

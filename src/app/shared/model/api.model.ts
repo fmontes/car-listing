@@ -8,7 +8,7 @@ export interface CarPrice {
     final: number;
 }
 
-export interface CarItem {
+export interface Car {
     brand: string;
     model: string;
     year: number;

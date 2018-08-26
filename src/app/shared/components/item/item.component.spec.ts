@@ -3,8 +3,8 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { DebugElement, Component } from '@angular/core';
 import { By } from '@angular/platform-browser';
 import { ItemComponent } from './item.component';
-import { CarItem } from '../../model/api.model';
-import { carItemMock, carImageMock, carPriceMock } from '../../../testing/mocks';
+import { Car } from '@models/api.model';
+import { carItemMock, carImageMock, carPriceMock } from '@testing/mocks';
 import { ImageComponent } from '../image/image.component';
 import { PriceComponent } from '../price/price.component';
 
@@ -13,9 +13,9 @@ import { PriceComponent } from '../price/price.component';
     template: '<car-item [data]="data"></car-item>',
 })
 class HostComponent {
-    data: CarItem;
+    data: Car;
 
-    setData(data: CarItem): void {
+    setData(data: Car): void {
         this.data = data;
     }
 }
