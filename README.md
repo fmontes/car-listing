@@ -1,4 +1,11 @@
-# CarListing
+# Car Listing
+A car listing gallery
+
+## Features
+- Filter cars by brands
+- See detail of a car
+- Compare up to 3 cars
+
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.1.5.
 
