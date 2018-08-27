@@ -113,5 +113,57 @@ export const data: Car[] = [
             width: 98.1,
             height: 87.8
         }
-    }
+    },
+    {
+        id: 'nissan-patrol-2019',
+        brand: 'Nissan',
+        model: 'Patrol',
+        year: 2019,
+        price: {
+            original: 87000,
+            final: 86000
+        },
+        image: {
+            caption: 'Best car ever',
+            src: '/assets/images/brands/nissan/patrol.jpg'
+        },
+        teaser: teaser,
+        description: desc,
+        features: {
+            engine: '200-hp, 6.5-liter I-4 (regular gas)',
+            transmission: '6-speed automatic',
+            seats: 3,
+            drivetrain: 'FWD',
+            length: 209.8,
+            wheelbase: 127.8,
+            width: 98.1,
+            height: 87.8
+        }
+    },
+    {
+        id: 'nissan-pathfinder-2014',
+        brand: 'Nissan',
+        model: 'Pathfinder',
+        year: 2012,
+        price: {
+            original: 25000,
+            final: 23000
+        },
+        image: {
+            caption: 'Best car ever',
+            src: '/assets/images/brands/nissan/pathfinder.jpg'
+        },
+        teaser: teaser,
+        description: desc,
+        features: {
+            engine: '176-hp, 2.5-liter I-4 (regular gas)',
+            transmission: '6-speed automatic',
+            seats: 7,
+            drivetrain: 'FWD',
+            length: 179.8,
+            wheelbase: 107.8,
+            width: 78.1,
+            height: 67.8
+        }
+    },
 ];
