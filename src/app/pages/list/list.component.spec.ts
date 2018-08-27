@@ -35,7 +35,7 @@ describe('ListComponent', () => {
             .queryAll(By.css('car-item'))
             .map((item) => item.componentInstance);
 
-        expect(items.length).toEqual(3);
+        expect(items.length).toEqual(6);
         items.forEach((item, i) => {
             expect(item.data).toEqual(data[i]);
         });

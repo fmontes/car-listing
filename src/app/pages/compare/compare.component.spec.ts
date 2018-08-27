@@ -2,8 +2,10 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
+import { CompareComponent } from '@pages/compare/compare.component';
+import { RouterTestingModule } from '@angular/router/testing';
+import { SharedModule } from '@shared/shared.module';
 
-import { CompareComponent } from '@pages/compare/compare/compare.component';
 
 describe('CompareComponent', () => {
     let component: CompareComponent;
@@ -11,7 +13,8 @@ describe('CompareComponent', () => {
 
     beforeEach(async(() => {
         TestBed.configureTestingModule({
-            declarations: [CompareComponent]
+            declarations: [CompareComponent],
+            imports: [RouterTestingModule, SharedModule]
         }).compileComponents();
     }));
 

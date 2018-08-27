@@ -18,7 +18,10 @@ describe('Service: CarApi', () => {
             expect(cars.map((car) => car.brand)).toEqual([
                 'BMW',
                 'Lexus',
-                'Mercedes Benz'
+                'Mercedes Benz',
+                'Toyota',
+                'Nissan',
+                'Nissan'
             ]);
             done();
         });

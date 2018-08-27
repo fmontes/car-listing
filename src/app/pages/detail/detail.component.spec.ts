@@ -67,12 +67,12 @@ describe('DetailComponent', () => {
     });
 
     it('should have teaser', () => {
-        const quote: DebugElement = de.query(By.css('.teaser'));
+        const quote: DebugElement = de.query(By.css('.detail__teaser'));
         expect(quote.nativeElement.textContent).toBe(data[0].teaser);
     });
 
     it('should have description', () => {
-        const description: DebugElement = de.query(By.css('.description'));
+        const description: DebugElement = de.query(By.css('.detail__description'));
         expect(description.nativeElement.innerHTML).toBe(data[0].description);
     });
 });
