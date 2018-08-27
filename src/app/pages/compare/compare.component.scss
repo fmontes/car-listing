@@ -1,3 +1,5 @@
+@import "../../../assets/scss/mixins";
+
 :host {
     // iOS bug with this and absolute position
     // -webkit-overflow-scrolling: touch;
@@ -8,16 +10,31 @@
     &::-webkit-scrollbar {
         display: none;
     }
+
+    @include md {
+        border: solid 1px rgba(0, 0, 0, 0.2);
+        margin: 2rem auto;
+        max-width: 90vw;
+        overflow-x: hidden;
+    }
 }
 
 car-image {
     flex: 0 0 auto;
-    height: 100px;
-    min-height: 100px;
+    height: 30vh;
+    min-height: 30vh;
     width: 47vw;
+
+    @include md {
+        width: 30vw;
+    }
 
     .car__half & {
         width: 50vw;
+
+        @include md {
+            width: 45vw;
+        }
     }
 }
 
@@ -38,6 +55,12 @@ car-image {
 
     h3, h5 {
         margin: 0;
+
+        @include md {
+            display: inline-block;
+            margin-right: .4rem;
+            font-size: 1.2rem;
+        }
     }
 }
 
@@ -53,5 +76,9 @@ car-image {
         display: none;
         position: absolute;
         left: 10px;
+
+        @include md {
+            position: static;
+        }
     }
 }
