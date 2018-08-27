@@ -21,7 +21,7 @@ export const data: Car[] = [
         },
         image: {
             caption: 'Best car ever',
-            src: '/assets/images/brands/bmw/x6.jpg'
+            src: 'assets/images/brands/bmw/x6.jpg'
         },
         teaser: teaser,
         description: desc,
@@ -47,7 +47,7 @@ export const data: Car[] = [
         },
         image: {
             caption: 'Best car ever',
-            src: '/assets/images/brands/lexus/nx.jpg'
+            src: 'assets/images/brands/lexus/nx.jpg'
         },
         teaser: teaser,
         description: desc,
@@ -73,7 +73,7 @@ export const data: Car[] = [
         },
         image: {
             caption: 'Best car ever',
-            src: '/assets/images/brands/mercedes-benz/g-wagon.jpg'
+            src: 'assets/images/brands/mercedes-benz/g-wagon.jpg'
         },
         teaser: teaser,
         description: desc,
@@ -99,7 +99,7 @@ export const data: Car[] = [
         },
         image: {
             caption: 'Best car ever',
-            src: '/assets/images/brands/toyota/tundra.jpg'
+            src: 'assets/images/brands/toyota/tundra.jpg'
         },
         teaser: teaser,
         description: desc,
@@ -125,7 +125,7 @@ export const data: Car[] = [
         },
         image: {
             caption: 'Best car ever',
-            src: '/assets/images/brands/nissan/patrol.jpg'
+            src: 'assets/images/brands/nissan/patrol.jpg'
         },
         teaser: teaser,
         description: desc,
@@ -151,7 +151,7 @@ export const data: Car[] = [
         },
         image: {
             caption: 'Best car ever',
-            src: '/assets/images/brands/nissan/pathfinder.jpg'
+            src: 'assets/images/brands/nissan/pathfinder.jpg'
         },
         teaser: teaser,
         description: desc,
