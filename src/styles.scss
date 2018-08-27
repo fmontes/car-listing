@@ -1,26 +1,29 @@
-@import url('https://fonts.googleapis.com/css?family=Ubuntu:400,700');
+@import url("https://fonts.googleapis.com/css?family=Ubuntu:400,700");
 
 :root {
     --car-img-height: 40vh;
-    --color-main: #00A0E7;
-    --color-sec: #9B9B9B;
+    --color-main: #00a0e7;
+    --color-sec: #9b9b9b;
     --color-text: #003045;
     --space-1: 10px;
     --space-2: 20px;
     --space-3: 30px;
 }
 
-*, *:before, *:after {
+*,
+*:before,
+*:after {
     box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
     padding: 0;
     margin: 0;
 }
 
 body {
-    font-family: 'Ubuntu', sans-serif;
+    font-family: "Ubuntu", sans-serif;
     font-size: 16px;
     line-height: 1.5;
     color: var(--color-text);

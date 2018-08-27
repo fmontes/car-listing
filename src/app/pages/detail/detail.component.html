@@ -1,6 +1,10 @@
 <car-image [data]="car.image"></car-image>
-<main class="content">
-    <car-price [data]="car.price"></car-price>
-    <h4 class="teaser">{{car.teaser}}</h4>
-    <div class="description" [innerHTML]="car.description"></div>
+<main class="detail__content">
+    <div class="detail__main">
+        <div>
+            <car-price [data]="car.price"></car-price>
+            <h4 class="detail__teaser">{{car.teaser}}</h4>
+        </div>
+        <div class="detail__description" [innerHTML]="car.description"></div>
+    </div>
 </main>

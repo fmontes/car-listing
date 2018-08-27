@@ -1,4 +1,23 @@
-.search {
+@import "../../../assets/scss/mixins";
+
+:host {
+    display: block;
+
+    @include md {
+        max-width: 90vw;
+        margin: 0 auto;
+    }
+}
+
+.list__items {
+    @include md {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 2fr));
+        grid-gap: 2rem;
+    }
+}
+
+.list__search {
     border-radius: 22px;
     border: solid 2px var(--color-main);
     font-family: 'Ubuntu', sans-serif;
@@ -9,12 +28,17 @@
     padding: 0 var(--space-2);
     width: calc(100% - 20px);
 
+    @include md {
+        margin: var(--space-2) 0;
+        width: 100%;
+    }
+
     &::placeholder {
         color: rgba(0, 160, 231, 0.35)
     }
 }
 
-.no-results {
+.list__no-results {
     margin: 2rem 0;
     text-align: center;
 
