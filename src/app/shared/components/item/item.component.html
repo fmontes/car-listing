@@ -1,5 +1,14 @@
-<a [routerLink]="[data.id]">
-    <div class="info">
+<div class="item__compare" [class.disabled]="comparedDisabled$ | async">
+    <input type="checkbox"
+        [id]="'compare-' + data.id"
+        (change)="setToCompare($event.target.checked)"
+        [disabled]="comparedDisabled$ | async"
+    />
+    <label [for]="'compare-' + data.id">Compare</label>
+</div>
+
+<a [routerLink]="[data.id]" class="item__link">
+    <div class="item__info">
         <header>
             <h3>{{title}}</h3>
             <h5>{{data.year}}</h5>

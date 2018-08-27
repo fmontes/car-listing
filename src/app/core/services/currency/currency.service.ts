@@ -9,11 +9,12 @@ export class CurrencyService {
         style: { style: 'currency', currency: 'USD' }
     };
 
-
     constructor() {}
 
-
     format(n: number): string {
-        return new Intl.NumberFormat(this.options.lang, this.options.style).format(n);
+        return new Intl.NumberFormat(
+            this.options.lang,
+            this.options.style
+        ).format(n);
     }
 }

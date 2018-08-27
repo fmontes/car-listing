@@ -1,6 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 import { Car } from '@models/api.model';
-import { CarResolverService } from '@resolvers/car-resolver.service';
+import { CarResolverService } from '@core/resolvers/car/car-resolver.service';
 
 xdescribe('Service: CarResolver', () => {
     let service: CarResolverService;

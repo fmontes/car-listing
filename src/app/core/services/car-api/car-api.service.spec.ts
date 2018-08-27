@@ -15,7 +15,11 @@ describe('Service: CarApi', () => {
 
     it('should get a list of cars', (done) => {
         service.getCars().subscribe((cars: Car[]) => {
-            expect(cars.map((car) => car.brand)).toEqual(['BMW', 'Lexus', 'Mercedes Benz']);
+            expect(cars.map((car) => car.brand)).toEqual([
+                'BMW',
+                'Lexus',
+                'Mercedes Benz'
+            ]);
             done();
         });
     });

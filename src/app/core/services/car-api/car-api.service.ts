@@ -10,13 +10,15 @@ export class CarApiService {
     constructor() {}
 
     /**
-     * Get a list of cars from the endpoint
+     * Get a list of cars from the endpoint, you can pass a list of ids
+     * separated by commas
      *
+     * @param {string} [ids]
      * @returns {Observable<Car[]>}
      * @memberof CarApiService
      */
-    getCars(): Observable<Car[]> {
-        return of(data);
+    getCars(ids?: string): Observable<Car[]> {
+        return ids ? this.pickCars(ids) : of(data);
     }
 
     /**
@@ -27,7 +29,15 @@ export class CarApiService {
      * @memberof CarApiService
      */
     getCarsByBrand(brand: string): Observable<Car[]> {
-        return of(brand ? data.filter(car => car.brand.toLocaleLowerCase() === brand.toLocaleLowerCase()) : data);
+        return of(
+            brand
+                ? data.filter(
+                      (car) =>
+                          car.brand.toLocaleLowerCase() ===
+                          brand.toLocaleLowerCase()
+                  )
+                : data
+        );
     }
 
     /**
@@ -38,6 +48,19 @@ export class CarApiService {
      * @memberof CarApiService
      */
     getCarById(id: string): Observable<Car> {
-        return of(data.filter(car => car.id === id)[0]);
+        return of(data.filter((car) => car.id === id)[0]);
+    }
+
+    private pickCars(ids: string): Observable<Car[]> {
+        let results = [];
+
+        ids.split(',').forEach((id: string) => {
+            return (results = [
+                ...results,
+                ...data.filter((car: Car) => car.id === id)
+            ]);
+        });
+
+        return of(results);
     }
 }

@@ -8,7 +8,7 @@ import { CarImage } from '@models/api.model';
 
 @Component({
     selector: 'car-host-test',
-    template: '<car-image [data]="data"></car-image>',
+    template: '<car-image [data]="data"></car-image>'
 })
 class HostComponent implements OnInit {
     data: CarImage;
@@ -42,7 +42,11 @@ describe('ImageComponent', () => {
 
     it('should have img attr setup correctly', () => {
         const image: DebugElement = de.query(By.css('div'));
-        expect(image.nativeElement.style.backgroundImage).toContain('url("an/url/image.jpg")');
-        expect(image.nativeElement.getAttribute('aria-label')).toContain('Hello World');
+        expect(image.nativeElement.style.backgroundImage).toContain(
+            'url("an/url/image.jpg")'
+        );
+        expect(image.nativeElement.getAttribute('aria-label')).toContain(
+            'Hello World'
+        );
     });
 });

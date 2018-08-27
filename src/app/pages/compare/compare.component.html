@@ -1,0 +1,23 @@
+<ng-template ngFor let-car [ngForOf]="cars" let-i="index" let-isFirst="first">
+    <div class="car" [class.car__half]="cars.length === 2">
+        <a [routerLink]="['/' + car.id]">
+            <car-image [data]="car.image"></car-image>
+        </a>
+
+        <div class="car__content">
+            <header class="car__header">
+                <h5>{{car.brand}}</h5>
+                <h3>{{car.model}}</h3>
+                <h5>{{car.year}}</h5>
+            </header>
+
+            <car-price [data]="car.price"></car-price>
+
+            <div *ngFor="let item of car.features | keyvalue">
+                <h4 class="car__feat-break"><span>{{item.key}}</span></h4>
+                <p>{{item.value}}</p>
+            </div>
+        </div>
+
+    </div>
+</ng-template>

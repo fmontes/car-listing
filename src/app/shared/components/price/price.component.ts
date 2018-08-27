@@ -8,7 +8,8 @@ import { CurrencyService } from '@services/currency/currency.service';
     styleUrls: ['./price.component.scss']
 })
 export class PriceComponent {
-    @Input() data: CarPrice;
+    @Input()
+    data: CarPrice;
 
     constructor(private currencyService: CurrencyService) {}
 

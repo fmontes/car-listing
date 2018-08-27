@@ -13,7 +13,29 @@ h3, h5 {
     margin: 0;
 }
 
-.info {
+.item__compare {
+    align-items: center;
+    background-color: #FFF;
+    border-radius: 2px;
+    color: var(--color-text);
+    display: flex;
+    padding: 2px 5px;
+    position: absolute;
+    right: var(--space-1);
+    top: var(--space-1);
+    transition: opacity 200ms ease-in;
+    z-index: 2;
+
+    &.disabled {
+        opacity: 0.35;
+    }
+}
+
+.item__link {
+    display: block;
+}
+
+.item__info {
     background-color: rgba(0, 0, 0, 0.6);
     bottom: 0;
     color: #FFF;

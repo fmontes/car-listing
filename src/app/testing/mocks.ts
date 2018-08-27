@@ -1,4 +1,5 @@
 import { CarImage, Car, CarPrice } from '@models/api.model';
+import { data } from '@core/services/car-api/car-api.data';
 
 export const carImageMock: CarImage = {
     caption: 'Best car ever',
@@ -10,13 +11,4 @@ export const carPriceMock: CarPrice = {
     final: 17990
 };
 
-export const carItemMock: Car = {
-    brand: 'BMW',
-    description: '<p>Hi</p>',
-    id: 'bmw-x6-2017',
-    image: carImageMock,
-    model: 'X6',
-    price: carPriceMock,
-    teaser: 'Hello World',
-    year: 2017
-};
+export const carItemMock: Car = data[0];

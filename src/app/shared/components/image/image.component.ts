@@ -7,10 +7,10 @@ import { CarImage } from '@models/api.model';
     styleUrls: ['./image.component.scss']
 })
 export class ImageComponent implements OnInit {
-    @Input() data: CarImage;
+    @Input()
+    data: CarImage;
 
     constructor() {}
 
-    ngOnInit() {
-    }
+    ngOnInit() {}
 }

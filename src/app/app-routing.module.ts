@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { CarResolverService } from '@resolvers/car-resolver.service';
+import { CarResolverService } from '@core/resolvers/car/car-resolver.service';
+import { CompareCarsResolverService } from '@core/resolvers/compare-cars/compare-cars-resolver.service';
 
 const routes: Routes = [
     {
@@ -13,12 +14,19 @@ const routes: Routes = [
         resolve: {
             car: CarResolverService
         }
+    },
+    {
+        path: 'compare/:id',
+        loadChildren: './pages/compare/compare.module#CompareModule',
+        resolve: {
+            cars: CompareCarsResolverService
+        }
     }
 ];
 
 @NgModule({
     imports: [RouterModule.forRoot(routes)],
     exports: [RouterModule],
-    providers: [CarResolverService]
+    providers: [CarResolverService, CompareCarsResolverService]
 })
 export class AppRoutingModule {}

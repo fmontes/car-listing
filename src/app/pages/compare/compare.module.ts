@@ -1,19 +1,18 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Routes, RouterModule } from '@angular/router';
-
-import { DetailComponent } from './detail.component';
+import { CompareComponent } from './compare.component';
+import { RouterModule, Routes } from '@angular/router';
 import { SharedModule } from '@shared/shared.module';
 
 const routes: Routes = [
     {
-        component: DetailComponent,
+        component: CompareComponent,
         path: ''
     }
 ];
 
 @NgModule({
     imports: [CommonModule, RouterModule.forChild(routes), SharedModule],
-    declarations: [DetailComponent]
+    declarations: [CompareComponent]
 })
-export class DetailModule {}
+export class CompareModule {}

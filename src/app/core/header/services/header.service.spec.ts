@@ -19,9 +19,12 @@ describe('Service: Header', () => {
 
     it('should set header title and doc title', () => {
         spyOn(titleService, 'setTitle');
-        service.getTitle().pipe(skip(1)).subscribe((title: string) => {
-            expect(title).toBe('Lexus NX 2019');
-        });
+        service
+            .getTitle()
+            .pipe(skip(1))
+            .subscribe((title: string) => {
+                expect(title).toBe('Lexus NX 2019');
+            });
 
         service.setTitle(data[1]);
 

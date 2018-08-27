@@ -1,8 +1,11 @@
 :host, div {
     display: block;
     height: 100%;
-    min-height: var(--car-img-height);
     width: 100%;
+}
+
+:host {
+    min-height: var(--car-img-height);
 }
 
 div {

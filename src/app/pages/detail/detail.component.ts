@@ -10,11 +10,13 @@ import { HeaderService } from '@core/header/services/header.service';
 })
 export class DetailComponent implements OnInit {
     car: Car;
-    constructor(private route: ActivatedRoute, private headerService: HeaderService) {}
+    constructor(
+        private route: ActivatedRoute,
+        private headerService: HeaderService
+    ) {}
 
     ngOnInit() {
-        this.car = this.route.snapshot.data.car;
+        this.car = <Car>this.route.snapshot.data.car;
         this.headerService.setTitle(this.car);
     }
 }
-

@@ -12,7 +12,7 @@ import { PriceComponent } from '../price/price.component';
 
 @Component({
     selector: 'car-host-test',
-    template: '<car-item [data]="data"></car-item>',
+    template: '<car-item [data]="data"></car-item>'
 })
 class HostComponent {
     data: Car;
@@ -31,7 +31,12 @@ describe('ItemComponent', () => {
 
     beforeEach(async(() => {
         TestBed.configureTestingModule({
-            declarations: [ItemComponent, HostComponent, ImageComponent, PriceComponent],
+            declarations: [
+                ItemComponent,
+                HostComponent,
+                ImageComponent,
+                PriceComponent
+            ],
             imports: [RouterTestingModule]
         }).compileComponents();
     }));
@@ -46,12 +51,14 @@ describe('ItemComponent', () => {
     });
 
     it('should have image', () => {
-        const image: ImageComponent = de.query(By.css('car-image')).componentInstance;
+        const image: ImageComponent = de.query(By.css('car-image'))
+            .componentInstance;
         expect(image.data).toEqual(carImageMock);
     });
 
     it('should have price', () => {
-        const price: PriceComponent = de.query(By.css('car-price')).componentInstance;
+        const price: PriceComponent = de.query(By.css('car-price'))
+            .componentInstance;
         expect(price.data).toEqual(carPriceMock);
     });
 

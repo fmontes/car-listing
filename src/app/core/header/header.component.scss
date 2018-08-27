@@ -20,13 +20,29 @@ h1 {
 .btn {
     background-color: rgba(0, 0, 0, 0.1);
     color: #FFF;
+    display: flex;
     font-size: 0.85rem;
     height: 60px;
-    left: 0;
     line-height: 60px;
     position: absolute;
     text-align: center;
     text-decoration: none;
     text-transform: uppercase;
-    width: 60px;
+    padding: 0 10px;
+
+    svg {
+        width: 24px;
+    }
+}
+
+.back {
+    left: 0;
+
+    svg {
+        transform: rotate(180deg);
+    }
+}
+
+.compare {
+    right: 0;
 }

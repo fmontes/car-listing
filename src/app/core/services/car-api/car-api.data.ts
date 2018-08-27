@@ -6,7 +6,8 @@ const desc = `
     <p>Morbi in sem quis dui placerat ornare. Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. Sed arcu. Cras consequat.</p>
 `;
 
-const teaser = 'Morbi in sem quis dui placerat ornare. Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. Sed arcu.';
+const teaser =
+    'Morbi in sem quis dui placerat ornare. Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. Sed arcu.';
 
 export const data: Car[] = [
     {
@@ -23,7 +24,17 @@ export const data: Car[] = [
             src: '/assets/images/brands/bmw/x6.jpg'
         },
         teaser: teaser,
-        description: desc
+        description: desc,
+        features: {
+            engine: '168-hp, 2.5-liter I-4 (regular gas)',
+            transmission: '6-speed automatic',
+            seats: 4,
+            drivetrain: 'FWD',
+            length: 178.1,
+            wheelbase: 105.9,
+            width: 72.4,
+            height: 66.3
+        }
     },
     {
         id: 'lexus-nx-2019',
@@ -39,7 +50,17 @@ export const data: Car[] = [
             src: '/assets/images/brands/lexus/nx.jpg'
         },
         teaser: teaser,
-        description: desc
+        description: desc,
+        features: {
+            engine: '184-hp, 2.4-liter I-4 (regular gas)',
+            transmission: '2-speed CVT',
+            seats: 5,
+            drivetrain: 'FWD',
+            length: 176.7,
+            wheelbase: 109.5,
+            width: 73.1,
+            height: 67.1
+        }
     },
     {
         id: 'mercedes-benz-class-g-2012',
@@ -55,6 +76,42 @@ export const data: Car[] = [
             src: '/assets/images/brands/mercedes-benz/g-wagon.jpg'
         },
         teaser: teaser,
-        description: desc
+        description: desc,
+        features: {
+            engine: '176-hp, 2.5-liter I-4 (regular gas)',
+            transmission: '6-speed automatic',
+            seats: 7,
+            drivetrain: 'FWD',
+            length: 179.8,
+            wheelbase: 107.8,
+            width: 78.1,
+            height: 67.8
+        }
+    },
+    {
+        id: 'toyota-tundra-2019',
+        brand: 'Toyota',
+        model: 'Tundra',
+        year: 2019,
+        price: {
+            original: 155000,
+            final: 154000
+        },
+        image: {
+            caption: 'Best car ever',
+            src: '/assets/images/brands/toyota/tundra.jpg'
+        },
+        teaser: teaser,
+        description: desc,
+        features: {
+            engine: '200-hp, 6.5-liter I-4 (regular gas)',
+            transmission: '6-speed automatic',
+            seats: 3,
+            drivetrain: 'FWD',
+            length: 209.8,
+            wheelbase: 127.8,
+            width: 98.1,
+            height: 87.8
+        }
     }
 ];

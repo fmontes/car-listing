@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { Car } from '@models/api.model';
 import { Title } from '@angular/platform-browser';
+import { formatTitle } from '@core/utils/title-formatter';
 
 @Injectable({
     providedIn: 'root'
@@ -17,8 +18,15 @@ export class HeaderService {
      * @param {string} title
      * @memberof HeaderService
      */
-    setTitle(car?: Car): void {
-        const title: string = car ? this.getFormattedTitle(car) : 'Car Listing';
+    setTitle(car?: Car | string): void {
+        let title: string;
+
+        if (typeof car === 'string') {
+            title = car;
+        } else {
+            title = car ? formatTitle(car) : 'Car Listing';
+        }
+
         this.titleService.setTitle(title);
         this.title$.next(title);
     }
@@ -31,9 +39,5 @@ export class HeaderService {
      */
     getTitle(): Observable<string> {
         return this.title$.asObservable();
-    }
-
-    private getFormattedTitle(car: Car): string {
-        return `${car.brand} ${car.model} ${car.year}`;
     }
 }

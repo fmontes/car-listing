@@ -55,12 +55,14 @@ describe('DetailComponent', () => {
     });
 
     it('should have image', () => {
-        const image: ImageComponent = de.query(By.css('car-image')).componentInstance;
+        const image: ImageComponent = de.query(By.css('car-image'))
+            .componentInstance;
         expect(image.data).toEqual(carImageMock);
     });
 
     it('should have price', () => {
-        const price: PriceComponent = de.query(By.css('car-price')).componentInstance;
+        const price: PriceComponent = de.query(By.css('car-price'))
+            .componentInstance;
         expect(price.data).toEqual(carPriceMock);
     });
 

@@ -31,7 +31,9 @@ describe('ListComponent', () => {
     });
 
     it('should create a list of cars', () => {
-        const items: ItemComponent[] = de.queryAll(By.css('car-item')).map(item => item.componentInstance);
+        const items: ItemComponent[] = de
+            .queryAll(By.css('car-item'))
+            .map((item) => item.componentInstance);
 
         expect(items.length).toEqual(3);
         items.forEach((item, i) => {
