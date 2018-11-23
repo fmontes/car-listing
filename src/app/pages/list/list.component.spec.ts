@@ -1,12 +1,13 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
-import { ListComponent } from './list.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DebugElement } from '@angular/core';
 import { By } from '@angular/platform-browser';
-import { SharedModule } from '@shared/shared.module';
-import { ItemComponent } from '@shared/components/item/item.component';
-import { data } from '@services/car-api/car-api.data';
 import { RouterTestingModule } from '@angular/router/testing';
+
+import { data } from '@services/car-api/car-api.data';
+import { SharedModule } from '@shared/shared.module';
+import { ListComponent } from './list.component';
+import { ItemComponent } from '@shared/components/item/item.component';
 import { HeaderService } from '@core/header/services/header.service';
 
 describe('ListComponent', () => {
@@ -18,7 +19,11 @@ describe('ListComponent', () => {
     beforeEach(async(() => {
         TestBed.configureTestingModule({
             declarations: [ListComponent],
-            imports: [SharedModule, RouterTestingModule]
+            imports: [
+                SharedModule,
+                RouterTestingModule,
+                BrowserAnimationsModule
+            ]
         }).compileComponents();
     }));
 

@@ -36,8 +36,8 @@
         <input type="text" placeholder="Search by brand" #search />
     </div>
 </div>
-<div *ngIf="(cars$ | async) as cars">
-    <div *ngIf="cars.length; else: noResults" class="list__items">
+<ng-container *ngIf="(cars$ | async) as cars">
+    <div [@listStagger]='cars.length' *ngIf="cars.length; else: noResults" class="list__items">
         <car-item *ngFor="let car of cars" [data]="car"></car-item>
     </div>
 
@@ -47,4 +47,4 @@
             <p>Try: bmw, lexus or mercedes benz</p>
         </div>
     </ng-template>
-</div>
+</ng-container>
