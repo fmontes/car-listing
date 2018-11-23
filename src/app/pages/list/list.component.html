@@ -36,10 +36,15 @@
         <input type="text" placeholder="Search by brand" #search />
     </div>
 </div>
-<div class="list__items">
-    <car-item *ngFor="let car of (cars$ | async)" [data]="car"></car-item>
-</div>
-<div class="list__no-results" *ngIf="(cars$ | async)?.length == 0">
-    <h4>No results</h4>
-    <p>Try: bmw, lexus or mercedes benz</p>
+<div *ngIf="(cars$ | async) as cars">
+    <div *ngIf="cars.length; else: noResults" class="list__items">
+        <car-item *ngFor="let car of cars" [data]="car"></car-item>
+    </div>
+
+    <ng-template #noResults>
+        <div class="list__no-results">
+            <h4>No results</h4>
+            <p>Try: bmw, lexus or mercedes benz</p>
+        </div>
+    </ng-template>
 </div>
