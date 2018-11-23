@@ -1,6 +1,43 @@
-<input type="text" placeholder="Search by brand" #search class="list__search" />
+<div class="list__search">
+    <div class="list__search-inner">
+        <svg
+            width="16px"
+            height="16px"
+            viewBox="0 0 16 16"
+            version="1.1"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+        >
+            <g
+                id="search-icon"
+                stroke="none"
+                stroke-width="1"
+                fill="none"
+                fill-rule="evenodd"
+            >
+                <g
+                    id="Search"
+                    transform="translate(-14.000000, -12.000000)"
+                    fill="#9B9B9B"
+                    fill-rule="nonzero"
+                >
+                    <g
+                        id="iconfinder_68_171427"
+                        transform="translate(14.000000, 12.000000)"
+                    >
+                        <path
+                            d="M13.0504789,7.96157746 C11.7236056,9.28833803 9.62332394,9.36980282 8.20146479,8.20597183 L7.68687324,7.69126761 C6.5228169,6.26940845 6.60450704,4.16923944 7.93138028,2.84202817 C9.34523944,1.42839437 11.6370704,1.42861972 13.0504789,2.84247887 C14.464,4.25633803 14.4642254,6.54783099 13.0504789,7.96157746 M14.3025352,9.26929577 C16.4229859,7.14895775 16.4229859,3.71076056 14.3025352,1.59030986 C12.1821972,-0.530140845 8.744,-0.530140845 6.6235493,1.59030986 C4.72112676,3.49273239 4.52664789,6.45498592 6.03774648,8.57532394 L0.265126761,14.3480563 C-0.0882253521,14.7015211 -0.0882253521,15.2744789 0.265126761,15.6280563 C0.618253521,15.9815211 1.19132394,15.9814085 1.54490141,15.6280563 L7.31740845,9.85521127 C9.43785915,11.3663099 12.4002254,11.1717183 14.3025352,9.26929577"
+                            id="Shape"
+                        ></path>
+                    </g>
+                </g>
+            </g>
+        </svg>
+        <input type="text" placeholder="Search by brand" #search />
+    </div>
+</div>
 <div class="list__items">
-    <car-item *ngFor="let car of cars$ | async" [data]="car"></car-item>
+    <car-item *ngFor="let car of (cars$ | async)" [data]="car"></car-item>
 </div>
 <div class="list__no-results" *ngIf="(cars$ | async)?.length == 0">
     <h4>No results</h4>
