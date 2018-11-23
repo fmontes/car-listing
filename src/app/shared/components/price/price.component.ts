@@ -1,5 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { CarPrice } from '@models/api.model';
+import { Component, Input } from '@angular/core';
 import { CurrencyService } from '@services/currency/currency.service';
 
 @Component({
@@ -8,8 +7,8 @@ import { CurrencyService } from '@services/currency/currency.service';
     styleUrls: ['./price.component.scss']
 })
 export class PriceComponent {
-    @Input()
-    data: CarPrice;
+    @Input() original: number;
+    @Input() final: number;
 
     constructor(private currencyService: CurrencyService) {}
 

@@ -10,16 +10,14 @@ import { map } from 'rxjs/operators';
     styleUrls: ['./item.component.scss']
 })
 export class ItemComponent implements OnInit {
-    @Input()
-    data: Car;
-    title: string;
+    @Input() data: Car;
+
     comparedDisabled$: Observable<boolean>;
     compareChecked = false;
 
     constructor(private compareApiService: CompareApiService) {}
 
     ngOnInit() {
-        this.title = `${this.data.brand} ${this.data.model}`;
         this.comparedDisabled$ = this.compareApiService
             .getIds$()
             .pipe(

@@ -3,7 +3,7 @@ import { data } from '@core/services/car-api/car-api.data';
 
 export const carImageMock: CarImage = {
     caption: 'Best car ever',
-    src: '/assets/images/brands/bmw/x6.jpg'
+    src: 'assets/images/brands/bmw/x6.jpg'
 };
 
 export const carPriceMock: CarPrice = {

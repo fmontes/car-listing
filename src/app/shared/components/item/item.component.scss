@@ -1,48 +1,39 @@
 :host {
+    background-color: #fff;
+    box-shadow: var(--md-shadow-1);
     display: block;
-    min-height: var(--car-img-height);
     position: relative;
-}
-
-car-image {
-    position: absolute;
-}
-
-h3, h5 {
-    font-weight: normal;
-    margin: 0;
-}
-
-.item__compare {
-    align-items: center;
-    background-color: #FFF;
     border-radius: 2px;
-    color: var(--color-text);
-    display: flex;
-    padding: 2px 5px;
-    position: absolute;
-    right: var(--space-1);
-    top: var(--space-1);
-    transition: opacity 200ms ease-in;
-    z-index: 2;
+}
 
-    &.disabled {
-        opacity: 0.35;
+.item__actions {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    car-button-toggle,
+    a {
+        margin: 5px 0;
+        width: 100%;
     }
 }
 
-.item__link {
-    display: block;
+.item__brand {
+    color: var(--color-sec);
+    text-transform: uppercase;
+    font-size: 0.75em;
 }
 
-.item__info {
-    background-color: rgba(0, 0, 0, 0.6);
-    bottom: 0;
-    color: #FFF;
+.item__content {
+    padding: var(--space-1) var(--space-2);
     display: flex;
     justify-content: space-between;
-    padding: var(--space-1) var(--space-2);
-    position: absolute;
     width: 100%;
-    z-index: 1;
+}
+
+.item__title {
+    margin: 0;
+    font-size: 1.5em;
+    font-weight: normal;
 }

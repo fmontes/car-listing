@@ -27,6 +27,7 @@ describe('ListComponent', () => {
         component = fixture.componentInstance;
         de = fixture.debugElement;
         headerService = de.injector.get(HeaderService);
+        spyOn(headerService, 'setTitle');
         fixture.detectChanges();
     });
 
@@ -41,8 +42,7 @@ describe('ListComponent', () => {
         });
     });
 
-    xit('should set the title', () => {
-        spyOn(headerService, 'setTitle');
+    it('should set the title', () => {
         expect(headerService.setTitle).toHaveBeenCalledTimes(1);
     });
 });

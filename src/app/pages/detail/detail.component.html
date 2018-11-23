@@ -2,7 +2,7 @@
 <main class="detail__content">
     <div class="detail__main">
         <div>
-            <car-price [data]="car.price"></car-price>
+            <car-price [original]="car.price.original" [final]="car.price.final"></car-price>
             <h4 class="detail__teaser">{{car.teaser}}</h4>
         </div>
         <div class="detail__description" [innerHTML]="car.description"></div>

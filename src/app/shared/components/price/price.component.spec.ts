@@ -7,7 +7,7 @@ import { CarPrice } from '@models/api.model';
 
 @Component({
     selector: 'car-host-test',
-    template: '<car-price [data]="data"></car-price>'
+    template: '<car-price [original]="data.original" [final]="data.final"></car-price>'
 })
 class HostComponent {
     data: CarPrice;

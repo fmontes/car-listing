@@ -1,19 +1,17 @@
-<div class="item__compare" [class.disabled]="comparedDisabled$ | async">
-    <input type="checkbox"
-        [id]="'compare-' + data.id"
-        (change)="setToCompare($event.target.checked)"
-        [disabled]="comparedDisabled$ | async"
-    />
-    <label [for]="'compare-' + data.id">Compare</label>
-</div>
-
-<a [routerLink]="[data.id]" class="item__link">
+<car-image [data]="data.image"></car-image>
+<div class="item__content">
     <div class="item__info">
-        <header>
-            <h3>{{title}}</h3>
-            <h5>{{data.year}}</h5>
-        </header>
-        <car-price [data]="data.price"></car-price>
+        <span class="item__brand">{{ data.brand }}</span>
+        <h3 class="item__title">{{ this.data.model }} {{ this.data.year }}</h3>
+        <car-price [final]="data.price.final"></car-price>
     </div>
-    <car-image [data]="data.image"></car-image>
-</a>
+
+    <div class="item__actions">
+        <car-button-toggle
+            label="Add"
+            [disabled]="comparedDisabled$ | async"
+            (change)="setToCompare($event)"
+        ></car-button-toggle>
+        <a [routerLink]="[data.id]" class="btn item__view">View</a>
+    </div>
+</div>

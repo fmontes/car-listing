@@ -6,9 +6,12 @@
 
 :host {
     min-height: var(--car-img-height);
+    display: flex;
+    flex-direction: column
 }
 
 div {
+    flex: 1;
     background-position: 50% 50%;
     background-repeat: no-repeat;
     background-size: cover;

@@ -10,6 +10,7 @@ import { HeaderService } from '@core/header/services/header.service';
 })
 export class DetailComponent implements OnInit {
     car: Car;
+
     constructor(
         private route: ActivatedRoute,
         private headerService: HeaderService

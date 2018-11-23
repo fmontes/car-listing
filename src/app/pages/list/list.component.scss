@@ -10,6 +10,16 @@
 }
 
 .list__items {
+    padding: var(--space-1);
+
+    car-item {
+        margin-bottom: var(--space-1);
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
     @include md {
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(300px, 2fr));

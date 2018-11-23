@@ -46,11 +46,11 @@ describe('DetailComponent', () => {
         component = fixture.componentInstance;
         de = fixture.debugElement;
         headerService = de.injector.get(HeaderService);
+        spyOn(headerService, 'setTitle');
         fixture.detectChanges();
     });
 
-    xit('should set the title', () => {
-        spyOn(headerService, 'setTitle');
+    it('should set the title', () => {
         expect(headerService.setTitle).toHaveBeenCalledTimes(1);
     });
 
@@ -63,7 +63,8 @@ describe('DetailComponent', () => {
     it('should have price', () => {
         const price: PriceComponent = de.query(By.css('car-price'))
             .componentInstance;
-        expect(price.data).toEqual(carPriceMock);
+        expect(price.original).toEqual(carPriceMock.original);
+        expect(price.final).toEqual(carPriceMock.final);
     });
 
     it('should have teaser', () => {

@@ -11,7 +11,7 @@
                 <h5>{{car.year}}</h5>
             </header>
 
-            <car-price [data]="car.price"></car-price>
+            <car-price [original]="car.price.original" [final]="car.price.finel"></car-price>
 
             <div *ngFor="let item of car.features | keyvalue">
                 <h4 class="car__feat-break"><span>{{item.key}}</span></h4>
