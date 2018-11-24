@@ -36,25 +36,28 @@
         <input type="text" placeholder="Search by brand" #search />
     </div>
 </div>
+
 <ng-container *ngIf="(cars$ | async) as cars">
-    <car-compare-bar
-        (remove)="onCompareRemove($event)"
-        [data]="comparables$ | async"
-        [class.active]="(comparables$ | async).length"
-    ></car-compare-bar>
-
-    <div
-        [@listStagger]="cars.length"
-        *ngIf="cars.length; else: noResults"
-        class="list__items"
-    >
-        <car-item *ngFor="let car of cars" [data]="car"></car-item>
-    </div>
-
-    <ng-template #noResults>
-        <div class="list__no-results">
-            <h4>No results</h4>
-            <p>Try: bmw, lexus or mercedes benz</p>
+    <div class="list__main">
+        <div
+            [@listStagger]="cars.length"
+            *ngIf="cars.length; else: noResults"
+            class="list__items"
+        >
+            <car-item *ngFor="let car of cars" [data]="car"></car-item>
         </div>
-    </ng-template>
+
+        <ng-template #noResults>
+            <div class="list__no-results">
+                <h4>No results</h4>
+                <p>Try: bmw, lexus or mercedes benz</p>
+            </div>
+        </ng-template>
+
+        <car-compare-bar
+            (remove)="onCompareRemove($event)"
+            [data]="comparables$ | async"
+            [class.active]="(comparables$ | async).length"
+        ></car-compare-bar>
+    </div>
 </ng-container>

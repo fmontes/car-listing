@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css?family=Hind|Montserrat:700");
 
 :root {
-    --car-img-height: 40vh;
+    --car-img-height: 250px;
     --color-bg: #E7F0F5;
     --color-main: #a30015;
     --color-sec: #85b6ce;
@@ -11,6 +11,7 @@
     --space-2: 20px;
     --space-3: 30px;
     --md-shadow-1: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    --radius-basic: 2px;
 }
 
 *,
@@ -37,7 +38,7 @@ body {
 .btn {
     align-items: center;
     background-color: transparent;
-    border-radius: 2px;
+    border-radius: var(--radius-basic);
     border: solid 1px var(--color-main);
     color: var(--color-main);
     cursor: pointer;

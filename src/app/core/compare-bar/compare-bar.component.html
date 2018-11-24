@@ -1,14 +1,20 @@
 <div [@listStagger]="data.length" class="compare-bar__wrapper">
     <div class="compare-bar__thumbs">
-        <car-thumb
-            *ngFor="let car of data"
-            [data]="car"
-            (remove)="remove.emit($event)"
-        ></car-thumb>
+        <ng-container *ngIf="!data.length; else thumbs">
+            <span class="thumb__placeholder"></span>
+            <span class="thumb__placeholder"></span>
+        </ng-container>
+        <ng-template #thumbs>
+            <car-thumb
+                *ngFor="let car of data"
+                [data]="car"
+                (remove)="remove.emit($event)"
+            ></car-thumb>
+        </ng-template>
     </div>
     <a
         href="#"
-        *ngIf="data.length > 1"
+        [class.disabled]="data.length < 2"
         secondary
         class="btn"
         (click)="goToCompare($event)"

@@ -3,7 +3,8 @@
     box-shadow: var(--md-shadow-1);
     display: block;
     position: relative;
-    border-radius: 2px;
+    border-radius: var(--radius-basic);
+    overflow: hidden;
 }
 
 .item__actions {

@@ -2,11 +2,6 @@
 
 :host {
     display: block;
-
-    @include md {
-        max-width: 90vw;
-        margin: 0 auto;
-    }
 }
 
 car-compare-bar {
@@ -19,10 +14,28 @@ car-compare-bar {
     &.active {
         transform: translateY(0);
     }
+
+    @include md {
+        position: static;
+        transform: none;
+    }
+}
+
+.list__main {
+    margin: var(--space-2) auto 70px;
+
+    @include md {
+        margin: var(--space-2) auto;
+        max-width: 90vw;
+        display: grid;
+        grid-template-columns: 1fr 200px;
+        grid-gap: 2rem;
+        align-items: flex-start;
+    }
 }
 
 .list__items {
-    padding: var(--space-1);
+    padding: 0 var(--space-1);
 
     car-item {
         margin-bottom: var(--space-1);
@@ -30,12 +43,18 @@ car-compare-bar {
         &:last-child {
             margin-bottom: 0;
         }
+
+        @include md {
+            margin: 0;
+            flex: 1;
+        }
     }
 
     @include md {
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(300px, 2fr));
         grid-gap: 2rem;
+        padding: 0;
     }
 }
 
@@ -51,10 +70,6 @@ car-compare-bar {
         font-size: 1rem;
         outline: 0;
         padding: 0 var(--space-1);
-    }
-
-    @include md {
-        margin: var(--space-2) 0;
     }
 
     &::placeholder {

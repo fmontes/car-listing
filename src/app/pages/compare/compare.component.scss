@@ -1,8 +1,6 @@
 @import "../../../assets/scss/mixins";
 
 :host {
-    // iOS bug with this and absolute position
-    // -webkit-overflow-scrolling: touch;
     display: flex;
     flex-wrap: nowrap;
     overflow-x: auto;

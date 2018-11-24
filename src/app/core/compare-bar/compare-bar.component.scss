@@ -1,7 +1,19 @@
+@import "../../../assets/scss/mixins";
+
 :host {
     background-color: #fff;
     box-shadow: var(--md-shadow-1);
     width: 100%;
+
+    @include md {
+        border-radius: var(--radius-basic);
+    }
+
+}
+
+.btn.disabled {
+    opacity: 0.5;
+    pointer-events: none;
 }
 
 car-thumb {
@@ -13,24 +25,53 @@ car-thumb {
 }
 
 .compare-bar__wrapper {
-    height: 52px;
     align-items: center;
     display: flex;
     justify-content: space-between;
     padding: 0 var(--space-1);
+
+    @include md {
+        flex-direction: column;
+        padding: var(--space-2);
+    }
 }
 
 .compare-bar__thumbs {
     align-items: center;
     display: flex;
-    display: flex;
     height: 52px;
     overflow: scroll;
     padding-right: 7px;
+
+    @include md {
+        display: grid;
+        grid-gap: 1em;
+        grid-template-columns: repeat(2, 1fr);
+        height: auto;
+        margin-bottom: var(--space-2);
+        overflow: inherit;
+        padding: 0;
+    }
 }
 
+.thumb__placeholder {
+    display: none;
+
+    @include md {
+        display: block;
+        border: dotted 1px var(--gray);
+    }
+}
+
+.thumb__placeholder,
 car-thumb {
     flex-shrink: 0;
+
+    @include md {
+        height: 50px;
+        margin: 0;
+        width: 72px;
+    }
 }
 
 .btn {
