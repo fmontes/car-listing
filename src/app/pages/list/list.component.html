@@ -37,7 +37,17 @@
     </div>
 </div>
 <ng-container *ngIf="(cars$ | async) as cars">
-    <div [@listStagger]='cars.length' *ngIf="cars.length; else: noResults" class="list__items">
+    <car-compare-bar
+        (remove)="onCompareRemove($event)"
+        [data]="comparables$ | async"
+        [class.active]="(comparables$ | async).length"
+    ></car-compare-bar>
+
+    <div
+        [@listStagger]="cars.length"
+        *ngIf="cars.length; else: noResults"
+        class="list__items"
+    >
         <car-item *ngFor="let car of cars" [data]="car"></car-item>
     </div>
 

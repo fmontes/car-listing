@@ -17,7 +17,7 @@ export class CarApiService {
      * @returns {Observable<Car[]>}
      * @memberof CarApiService
      */
-    getCars(ids?: string): Observable<Car[]> {
+    getCars(ids?: string[]): Observable<Car[]> {
         return ids ? this.pickCars(ids) : of(data);
     }
 
@@ -51,14 +51,14 @@ export class CarApiService {
         return of(data.filter((car) => car.id === id)[0]);
     }
 
-    private pickCars(ids: string): Observable<Car[]> {
+    private pickCars(ids: string[]): Observable<Car[]> {
         let results = [];
 
-        ids.split(',').forEach((id: string) => {
-            return (results = [
+        ids.forEach((id: string) => {
+            results = [
                 ...results,
                 ...data.filter((car: Car) => car.id === id)
-            ]);
+            ];
         });
 
         return of(results);

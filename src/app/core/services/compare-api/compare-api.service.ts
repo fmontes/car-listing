@@ -1,15 +1,17 @@
 import { Injectable } from '@angular/core';
 import { Observable, BehaviorSubject } from 'rxjs';
-import { filter } from 'rxjs/operators';
+import { filter, switchMap, defaultIfEmpty } from 'rxjs/operators';
+import { CarApiService } from '../car-api/car-api.service';
+import { Car } from '@models/api.model';
 
 @Injectable({
     providedIn: 'root'
 })
 export class CompareApiService {
-    items$: BehaviorSubject<string> = new BehaviorSubject('');
-    items = [];
+    items$: BehaviorSubject<string[]> = new BehaviorSubject([]);
+    private items: string[] = [];
 
-    constructor() {}
+    constructor(private carApiService: CarApiService) {}
 
     /**
      * Add car to compare
@@ -19,7 +21,19 @@ export class CompareApiService {
      */
     add(id: string): void {
         this.items = [...this.items, ...[id]];
-        this.items$.next(this.items.join(','));
+        this.items$.next(this.items);
+    }
+
+    /**
+     * Get cars to compare
+     *
+     * @returns {Observable<Car[]>}
+     * @memberof CompareApiService
+     */
+    getComparableItems$(): Observable<Car[]> {
+        return this.getIds$().pipe(
+            switchMap((ids: string[]) => this.carApiService.getCars(ids))
+        );
     }
 
     /**
@@ -28,8 +42,13 @@ export class CompareApiService {
      * @returns {Observable<string>}
      * @memberof CompareApiService
      */
-    getIds$(): Observable<string> {
-        return this.items$.asObservable().pipe(filter((ids: string) => ids.split(',').length > 1));
+    getIds$(): Observable<string[]> {
+        return this.items$
+            .asObservable();
+            // .pipe(
+            //     filter((ids: string[]) => ids.length > 1),
+            //     defaultIfEmpty([])
+            // );
     }
 
     /**
@@ -40,7 +59,7 @@ export class CompareApiService {
      */
     remove(id: string): void {
         this.items = this.items.filter((e) => e !== id);
-        this.items$.next(this.items.join(','));
+        this.items$.next(this.items);
     }
 
     /**
@@ -50,6 +69,6 @@ export class CompareApiService {
      */
     clear() {
         this.items = [];
-        this.items$.next('');
+        this.items$.next([]);
     }
 }

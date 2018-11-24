@@ -9,6 +9,18 @@
     }
 }
 
+car-compare-bar {
+    position: fixed;
+    bottom: 0;
+    z-index: 1;
+    transition: transform 150ms ease-in-out;
+    transform: translateY(52px);
+
+    &.active {
+        transform: translateY(0);
+    }
+}
+
 .list__items {
     padding: var(--space-1);
 

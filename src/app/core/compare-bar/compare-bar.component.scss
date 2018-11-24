@@ -1,0 +1,48 @@
+:host {
+    background-color: #fff;
+    box-shadow: var(--md-shadow-1);
+    width: 100%;
+}
+
+car-thumb {
+    margin-right: var(--space-1);
+
+    &:last-child {
+        margin-right: 0;
+    }
+}
+
+.compare-bar__wrapper {
+    height: 52px;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 var(--space-1);
+}
+
+.compare-bar__thumbs {
+    align-items: center;
+    display: flex;
+    display: flex;
+    height: 52px;
+    overflow: scroll;
+    padding-right: 7px;
+}
+
+car-thumb {
+    flex-shrink: 0;
+}
+
+.btn {
+    margin-left: var(--space-1);
+}
+
+.badge {
+    background-color: var(--color-sec);
+    border-radius: 12px;
+    color: #fff;
+    display: inline-block;
+    margin-left: 5px;
+    text-align: center;
+    width: 24px;
+}

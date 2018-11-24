@@ -8,8 +8,8 @@
 
     <div class="item__actions">
         <car-button-toggle
+            [selected]="data.selected"
             label="Add"
-            [disabled]="comparedDisabled$ | async"
             (change)="setToCompare($event)"
         ></car-button-toggle>
         <a [routerLink]="[data.id]" class="btn item__view">View</a>

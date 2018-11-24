@@ -4,9 +4,42 @@
 
 .btn {
     width: 100%;
+
+    &:before,
+    &:after,
+    span {
+        opacity: 1;
+        line-height: 1;
+    }
 }
 
 .filled {
     background-color: var(--color-sec);
     color: #fff;
+    position: relative;
+
+    span {
+        opacity: 0;
+    }
+
+    &:before,
+    &:after {
+        background-color: #fff;
+        content: "";
+        display: block;
+        height: 16px;
+        left: 50%;
+        opacity: 1;
+        position: absolute;
+        top: 7px;
+        width: 3px;
+    }
+
+    &:before {
+        transform: rotate(45deg);
+    }
+
+    &:after {
+        transform: rotate(-45deg);
+    }
 }

@@ -1,0 +1,17 @@
+<div [@listStagger]="data.length" class="compare-bar__wrapper">
+    <div class="compare-bar__thumbs">
+        <car-thumb
+            *ngFor="let car of data"
+            [data]="car"
+            (remove)="remove.emit($event)"
+        ></car-thumb>
+    </div>
+    <a
+        href="#"
+        *ngIf="data.length > 1"
+        secondary
+        class="btn"
+        (click)="goToCompare($event)"
+        >Compare <span class="badge">{{ data.length }}</span></a
+    >
+</div>

@@ -8,7 +8,12 @@ import { ButtonToggleComponent } from './components/button-toggle/button-toggle.
 
 @NgModule({
     imports: [CommonModule, RouterModule],
-    declarations: [ImageComponent, PriceComponent, ItemComponent, ButtonToggleComponent],
+    declarations: [
+        ButtonToggleComponent,
+        ImageComponent,
+        ItemComponent,
+        PriceComponent
+    ],
     exports: [ImageComponent, PriceComponent, ItemComponent]
 })
 export class SharedModule {}

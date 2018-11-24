@@ -29,4 +29,5 @@ export interface Car {
     teaser: string;
     year: number;
     features: CarFeatures;
+    selected?: boolean;
 }

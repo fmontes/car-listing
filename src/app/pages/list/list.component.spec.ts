@@ -9,12 +9,15 @@ import { SharedModule } from '@shared/shared.module';
 import { ListComponent } from './list.component';
 import { ItemComponent } from '@shared/components/item/item.component';
 import { HeaderService } from '@core/header/services/header.service';
+import { CompareBarModule } from '@core/compare-bar/compare-bar.module';
+import { CompareApiService } from '@core/services/compare-api/compare-api.service';
 
 describe('ListComponent', () => {
     let component: ListComponent;
     let fixture: ComponentFixture<ListComponent>;
     let de: DebugElement;
     let headerService: HeaderService;
+    let compareApiService: CompareApiService;
 
     beforeEach(async(() => {
         TestBed.configureTestingModule({
@@ -22,7 +25,8 @@ describe('ListComponent', () => {
             imports: [
                 SharedModule,
                 RouterTestingModule,
-                BrowserAnimationsModule
+                BrowserAnimationsModule,
+                CompareBarModule
             ]
         }).compileComponents();
     }));
@@ -49,5 +53,26 @@ describe('ListComponent', () => {
 
     it('should set the title', () => {
         expect(headerService.setTitle).toHaveBeenCalledTimes(1);
+    });
+
+    describe('CompareBar', () => {
+        beforeEach(() => {
+            compareApiService = de.injector.get(CompareApiService);
+            spyOn(compareApiService, 'remove');
+        });
+
+        it('should have compare bar', () => {
+            const bar: DebugElement = de.query(By.css('car-compare-bar'));
+            expect(bar).toBeTruthy();
+        });
+
+        it('should have cars to compare', () => {
+            const bar: DebugElement = de.query(By.css('car-compare-bar'));
+            bar.triggerEventHandler('remove', {
+                id : '123'
+            });
+
+            expect(compareApiService.remove).toHaveBeenCalledWith('123');
+        });
     });
 });

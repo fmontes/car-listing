@@ -1,0 +1,42 @@
+:host {
+    width: 48px;
+    height: 32px;
+    display: inline-block;
+    position: relative;
+}
+
+car-image {
+    min-height: inherit;
+}
+
+.badge {
+    display: block;
+    background-color: var(--color-main);
+    width: 12px;
+    height: 12px;
+    border: 0;
+    position: absolute;
+    top: -6px;
+    right: -6px;
+    border-radius: 6px;
+
+    &:before,
+    &:after {
+        background-color: #fff;
+        content: "";
+        display: block;
+        height: 8px;
+        left: 5px;
+        position: absolute;
+        top: 2px;
+        width: 2px;
+    }
+
+    &:before {
+        transform: rotate(45deg);
+    }
+
+    &:after {
+        transform: rotate(-45deg);
+    }
+}

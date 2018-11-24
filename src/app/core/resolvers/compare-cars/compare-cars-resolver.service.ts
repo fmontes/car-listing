@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
 import {
     Resolve,
-    ActivatedRouteSnapshot,
-    RouterStateSnapshot
+    ActivatedRouteSnapshot
 } from '@angular/router';
 import { Car } from '@models/api.model';
 import { Observable } from 'rxjs';
@@ -13,6 +12,6 @@ export class CompareCarsResolverService implements Resolve<Car[]> {
     constructor(private carApiService: CarApiService) {}
 
     resolve(route: ActivatedRouteSnapshot): Observable<Car[]> {
-        return this.carApiService.getCars(route.params.id);
+        return this.carApiService.getCars(route.params.id.split(','));
     }
 }
