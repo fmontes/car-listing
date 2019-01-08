@@ -1,7 +1,8 @@
 :host {
     background-color: #fff;
     box-shadow: var(--md-shadow-1);
-    display: block;
+    display: flex;
+    flex-direction: column;
     position: relative;
     border-radius: var(--radius-basic);
     overflow: hidden;
